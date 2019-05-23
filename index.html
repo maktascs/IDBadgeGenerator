@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ID Badge Generator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39" rel="stylesheet">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="left">
+            <table>
+            <tr>
+            <td colspan="2"><h3 style="text-align:center;color: rgb(0,128,192) ;">Harmony: ID Badge Generator</h3></td>
+            </tr>
+                <tr>
+                    <td class="inputCells">
+                        <span>ID Type:</span>
+                    </td>
+                    <td class="inputCells">
+                        <select name="school-type" id="cardTypeInput" data-bind="options: cards, optionsText: 'description', value: chosenCard"></select>
+                    </td>
+                </tr>
+                <tr style="display:none">
+                    <td class="inputCells">
+                        <span>Brand:</span>
+                    </td>
+                    <td class="inputCells">
+                        <select name="school-brand" id="schoolBrandInput" data-bind="options: schools, optionsText: 'description', value: chosenSchool"></select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="inputCells">
+                        <span>School name:</span>
+                    </td>
+                    <td class="inputCells">
+                        <input type="text" id="schoolNameInput" data-bind="value: schoolName" onchange="setFont(this);" />
+                        <input type="color" id="head" name="head" onchange="setColor(this.value,schoolNameDisplay)" value="#074F9A">
+                        <select id="schoolNameFontSize" name="schoolNameFontSize"  >
+                        <option>Size</option>
+                        <option value="10px" style="font-size:10px">10px</option>
+                        <option value="11px" style="font-size:11px">11px</option>
+                        <option value="12px" style="font-size:12px">12px</option>
+                        <option value="13px" style="font-size:13px">13px</option>
+                        <option value="14px" style="font-size:14px">14px</option>
+                        <option value="15px" style="font-size:15px">15px</option>
+                        <option value="16px" style="font-size:16px">16px</option>
+                        <option value="17px" style="font-size:17px">17px</option>
+                        <option value="18px" style="font-size:18px">18px</option>
+                        <option value="19px" style="font-size:19px">19px</option>
+                        <option value="20px" style="font-size:20px">20px</option>
+                        </select>
+
+                        <select id="schoolNameFontFamily" name="schoolNameFontSize"  >
+                            <option>Font</option>
+                            <option value="Arial" style="font-family:Arial">Arial</option>
+                            <option value="Helvetica" style="font-family:Helvetica">Helvetica</option>
+                            <option value="Times New Roman" style="font-family:Times New Roman">Times New Roman</option>
+                            <option value="Times" style="font-family:Times">Times</option>
+                            <option value="Courier New" style="font-family:Courier New">Courier New</option>
+                            <option value="Verdana" style="font-family:Verdana">Verdana</option>
+                            <option value="Georgia" style="font-family:Georgia">Georgia</option>
+                            <option value="Garamond" style="font-family:Garamond">Garamond</option>
+                            <option value="Comic Sans MS" style="font-family:Comic Sans MS">Comic Sans MS</option>
+                            <option value="Trebuchet MS" style="font-family:Trebuchet MS">Trebuchet MS</option>
+                            <option value="Arial Black" style="font-family:Arial Black">Arial Black</option>
+                            <option value="Impact" style="font-family:Impact">Impact</option>
+                            <option value="Tahoma" style="font-family:Tahoma">Tahoma</option>
+                        </select>
+    
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="inputCells">
+                        <span>School year:</span>
+                    </td>
+                    <td class="inputCells">
+                        <input type="text" id="schoolYearInput" data-bind="value: schoolYear" />
+
+                        <input type="color" id="head" name="head" onchange="setColor(this.value,schoolYearDisplay)" value="#ED1C27">
+                        <select id="schoolYearFontSize" name="schoolYearFontSize"  >
+                        <option>Size</option>
+                        <option value="10px" style="font-size:10px">10px</option>
+                        <option value="11px" style="font-size:11px">11px</option>
+                        <option value="12px" style="font-size:12px">12px</option>
+                        <option value="13px" style="font-size:13px">13px</option>
+                        <option value="14px" style="font-size:14px">14px</option>
+                        <option value="15px" style="font-size:15px">15px</option>
+                        <option value="16px" style="font-size:16px">16px</option>
+                        <option value="17px" style="font-size:17px">17px</option>
+                        <option value="18px" style="font-size:18px">18px</option>
+                        <option value="19px" style="font-size:19px">19px</option>
+                        <option value="20px" style="font-size:20px">20px</option>
+                        </select>
+
+                        <select id="schoolYearFontFamily" name="schoolYearFontFamily"  >
+                            <option>Font</option>
+                            <option value="Arial" style="font-family:Arial">Arial</option>
+                            <option value="Helvetica" style="font-family:Helvetica">Helvetica</option>
+                            <option value="Times New Roman" style="font-family:Times New Roman">Times New Roman</option>
+                            <option value="Times" style="font-family:Times">Times</option>
+                            <option value="Courier New" style="font-family:Courier New">Courier New</option>
+                            <option value="Verdana" style="font-family:Verdana">Verdana</option>
+                            <option value="Georgia" style="font-family:Georgia">Georgia</option>
+                            <option value="Garamond" style="font-family:Garamond">Garamond</option>
+                            <option value="Comic Sans MS" style="font-family:Comic Sans MS">Comic Sans MS</option>
+                            <option value="Trebuchet MS" style="font-family:Trebuchet MS">Trebuchet MS</option>
+                            <option value="Arial Black" style="font-family:Arial Black">Arial Black</option>
+                            <option value="Impact" style="font-family:Impact">Impact</option>
+                            <option value="Tahoma" style="font-family:Tahoma">Tahoma</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="inputCells">
+                        <span>Upload photo:</span>
+                    </td>
+                    <td class="inputCells">
+                        <label for="imgInp" class="custom-file-upload">Upload ID Photo</label>
+                        <input type='file' id="imgInp" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="inputCells">
+                        <span>First Name:</span>
+                    </td>
+                    <td class="inputCells">
+                        <input type="text" id="firstNameInput" data-bind="value: firstName" />
+
+                        <input type="color" id="head" name="head" onchange="setColor(this.value,firstNameDisplay)" value="#cb21c7">
+                        <select id="firstNameDisplayFontSize" name="firstNameDisplayFontSize"  >
+                        <option>Size</option>
+                        <option value="10px" style="font-size:10px">10px</option>
+                        <option value="11px" style="font-size:11px">11px</option>
+                        <option value="12px" style="font-size:12px">12px</option>
+                        <option value="13px" style="font-size:13px">13px</option>
+                        <option value="14px" style="font-size:14px">14px</option>
+                        <option value="15px" style="font-size:15px">15px</option>
+                        <option value="16px" style="font-size:16px">16px</option>
+                        <option value="17px" style="font-size:17px">17px</option>
+                        <option value="18px" style="font-size:18px">18px</option>
+                        <option value="19px" style="font-size:19px">19px</option>
+                        <option value="20px" style="font-size:20px">20px</option>
+                        </select>
+
+                        <select id="firstNameDisplayFontFamily" name="firstNameDisplayFontFamily"  >
+                            <option>Font</option>
+                            <option value="Arial" style="font-family:Arial">Arial</option>
+                            <option value="Helvetica" style="font-family:Helvetica">Helvetica</option>
+                            <option value="Times New Roman" style="font-family:Times New Roman">Times New Roman</option>
+                            <option value="Times" style="font-family:Times">Times</option>
+                            <option value="Courier New" style="font-family:Courier New">Courier New</option>
+                            <option value="Verdana" style="font-family:Verdana">Verdana</option>
+                            <option value="Georgia" style="font-family:Georgia">Georgia</option>
+                            <option value="Garamond" style="font-family:Garamond">Garamond</option>
+                            <option value="Comic Sans MS" style="font-family:Comic Sans MS">Comic Sans MS</option>
+                            <option value="Trebuchet MS" style="font-family:Trebuchet MS">Trebuchet MS</option>
+                            <option value="Arial Black" style="font-family:Arial Black">Arial Black</option>
+                            <option value="Impact" style="font-family:Impact">Impact</option>
+                            <option value="Tahoma" style="font-family:Tahoma">Tahoma</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="inputCells">
+                        <span>Last Name:</span>
+                    </td>
+                    <td class="inputCells">
+                        <input type="text" id="lastNameInput" data-bind="value: lastName" />
+
+                        <input type="color" id="lastNameDisplayColor" name="lastNameDisplayColor" onchange="setColor(this.value,lastNameDisplay)" value="#cb21c7">
+                        <select id="lastNameDisplayFontSize" name="lastNameDisplayFontSize"  >
+                        <option>Size</option>
+                        <option value="10px" style="font-size:10px">10px</option>
+                        <option value="11px" style="font-size:11px">11px</option>
+                        <option value="12px" style="font-size:12px">12px</option>
+                        <option value="13px" style="font-size:13px">13px</option>
+                        <option value="14px" style="font-size:14px">14px</option>
+                        <option value="15px" style="font-size:15px">15px</option>
+                        <option value="16px" style="font-size:16px">16px</option>
+                        <option value="17px" style="font-size:17px">17px</option>
+                        <option value="18px" style="font-size:18px">18px</option>
+                        <option value="19px" style="font-size:19px">19px</option>
+                        <option value="20px" style="font-size:20px">20px</option>
+                        </select>
+
+                        <select id="lastNameDisplayFontFamily" name="lastNameDisplayFontFamily"  >
+                            <option>Font</option>
+                            <option value="Arial" style="font-family:Arial">Arial</option>
+                            <option value="Helvetica" style="font-family:Helvetica">Helvetica</option>
+                            <option value="Times New Roman" style="font-family:Times New Roman">Times New Roman</option>
+                            <option value="Times" style="font-family:Times">Times</option>
+                            <option value="Courier New" style="font-family:Courier New">Courier New</option>
+                            <option value="Verdana" style="font-family:Verdana">Verdana</option>
+                            <option value="Georgia" style="font-family:Georgia">Georgia</option>
+                            <option value="Garamond" style="font-family:Garamond">Garamond</option>
+                            <option value="Comic Sans MS" style="font-family:Comic Sans MS">Comic Sans MS</option>
+                            <option value="Trebuchet MS" style="font-family:Trebuchet MS">Trebuchet MS</option>
+                            <option value="Arial Black" style="font-family:Arial Black">Arial Black</option>
+                            <option value="Impact" style="font-family:Impact">Impact</option>
+                            <option value="Tahoma" style="font-family:Tahoma">Tahoma</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="inputCells">
+                        <span id="gradeJobInputLabel">Grade</span>
+                    </td>
+                    <td class="inputCells">
+                        <select name="gradeInput" class="gradeRelated" id="gradeInput" data-bind="options: grades, optionsText: 'grade', value: chosenGrade"></select>
+                        <input type="text" id="positionInput" class="positionRelated" data-bind="value: position" />
+
+                        <input type="color" id="gradeDisplayColor" name="gradeDisplayColor" onchange="setColor(this.value,gradeDisplay)" value="#fff">
+                        <select id="gradeDisplayFontSize" name="gradeDisplayFontSize"  >
+                        <option>Size</option>
+                        <option value="10px" style="font-size:10px">10px</option>
+                        <option value="11px" style="font-size:11px">11px</option>
+                        <option value="12px" style="font-size:12px">12px</option>
+                        <option value="13px" style="font-size:13px">13px</option>
+                        <option value="14px" style="font-size:14px">14px</option>
+                        <option value="15px" style="font-size:15px">15px</option>
+                        <option value="16px" style="font-size:16px">16px</option>
+                        <option value="17px" style="font-size:17px">17px</option>
+                        <option value="18px" style="font-size:18px">18px</option>
+                        <option value="19px" style="font-size:19px">19px</option>
+                        <option value="20px" style="font-size:20px">20px</option>
+                        </select>
+
+                        <select id="gradeDisplayFontFamily" name="gradeDisplayFontFamily"  >
+                            <option>Font</option>
+                            <option value="Arial" style="font-family:Arial">Arial</option>
+                            <option value="Helvetica" style="font-family:Helvetica">Helvetica</option>
+                            <option value="Times New Roman" style="font-family:Times New Roman">Times New Roman</option>
+                            <option value="Times" style="font-family:Times">Times</option>
+                            <option value="Courier New" style="font-family:Courier New">Courier New</option>
+                            <option value="Verdana" style="font-family:Verdana">Verdana</option>
+                            <option value="Georgia" style="font-family:Georgia">Georgia</option>
+                            <option value="Garamond" style="font-family:Garamond">Garamond</option>
+                            <option value="Comic Sans MS" style="font-family:Comic Sans MS">Comic Sans MS</option>
+                            <option value="Trebuchet MS" style="font-family:Trebuchet MS">Trebuchet MS</option>
+                            <option value="Arial Black" style="font-family:Arial Black">Arial Black</option>
+                            <option value="Impact" style="font-family:Impact">Impact</option>
+                            <option value="Tahoma" style="font-family:Tahoma">Tahoma</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="inputCells">
+                        <span id="idNumberInputLabel">Student number:</span>
+                    </td>
+                    <td class="inputCells">
+                        <input type="text" id="idNumberInput" data-bind="value: idNumber" />
+                    </td>
+                </tr>
+                <tr>
+                    <td id="buttonCell" colspan="2">
+                        <a href="javascript:window.print()" class="myButton">&nbsp;&nbsp;Print&nbsp;&nbsp;</a>
+                    </td>
+                </tr>
+                
+               
+            </table>
+        </div>
+        <div id="right">
+            <!-- ko with: chosenCard -->
+            <img id="backgroundImage" data-bind="attr: { src: imgPath }" />
+            <!-- /ko -->
+            <div class="displayGeneral" id="logoContainer" data-bind="with: chosenSchool">
+                <img id="logo" data-bind="attr: { src: logoPath }" />
+            </div>
+            <div class="displayGeneral" id="schoolNameDisplay" data-bind="text: schoolName"></div>
+            <div class="displayGeneral" id="schoolYearDisplay" data-bind="text: schoolYear"></div>
+            <div class="displayGeneral" id="photoContainer">
+                <img id="photo" src="img/1lnjkkbvgex21.jpg" alt="your image" />
+            </div>
+            <div class="displayGeneral nameGradePosition" id="firstNameDisplay" data-bind="text: firstName"></div>
+            <div class="displayGeneral nameGradePosition" id="lastNameDisplay" data-bind="text: lastName"></div>
+            <div class="displayGeneral nameGradePosition">
+                <span id="gradeJobDisplayLabel" class="gradeRelated">Grade:&nbsp;</span>
+                <!-- ko with: chosenGrade -->
+                <span id="gradeDisplay" class="gradeRelated" data-bind="text: grade"></span>
+                <!-- /ko -->
+                <span id="positionDisplay" class="positionRelated" data-bind="text: position"></span>
+            </div>
+            <div id="idNumberCornerDisplay" data-bind="text: idNumber"></div>
+            <div class="displayGeneral" id="idNumberBarcodeDisplay" data-bind="text: idNumberBarcode"></div>
+
+        </div>
+    </div>
+
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/knockout-3.4.2.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

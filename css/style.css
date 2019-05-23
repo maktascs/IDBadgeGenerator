@@ -1,0 +1,300 @@
+@font-face {
+    font-family: "nobel";
+    src: url("nobel_regular.ttf") format("truetype")
+}
+
+@font-face {
+    font-family: "barcode";
+    src: url("free3of9.ttf") format("truetype")
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("img/pattern28.gif");
+    background-repeat: repeat;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+input[type="text"] {
+    margin:0px;
+    width:300px;
+    border: none;
+    border-bottom: 2px solid #29bbff;
+    padding: 3px 4px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+    
+}
+input[type=file] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 3px 3px;
+    background-color: #4CAF50;
+    cursor: pointer;
+    color:#fff;
+}
+
+input[type=text]:focus {
+    background-color: lightblue;
+  }
+
+
+select#gradeInput, select#cardTypeInput {
+    width:300px !important;
+    padding: 4px 5px !important;
+    border: none !important;
+    border-radius: 2px !important;
+    background-color: #f1f1f1 !important;
+}
+
+select {
+    
+    padding: 4px 5px;
+    border: none;
+    border-radius: 2px;
+    background-color: #f1f1f1;
+}
+
+
+#wrapper {
+    width: 1000px;
+    margin: 2% auto;
+}
+
+tr {
+    margin: 6px 0 6px 0;
+}
+
+#left {
+    float: left;
+    width: 75%;
+    margin: 0;
+    padding: 5px;
+    padding-left:30px;
+    border:1px solid #ccc;
+    margin-right: 40px;
+    overflow:hidden;
+    border-radius: 0.09in;
+    position: relative;
+    box-shadow: 6px 6px 20px -6px rgba(0,0,0,0.75);
+    height: 3.8in;
+    top:0;
+}
+
+
+.gradeRelated {
+    width:210px;
+}
+
+#cardTypeInput {
+    width:210px;
+}
+
+.inputCells {
+    padding: 2pt 0;
+}
+
+#buttonCell {
+    padding: 5pt 0;
+    text-align: center;
+}
+
+#right {
+    /* float: right; */
+    overflow: hidden;
+    width: 2.125in;
+    height: 3.382in;
+    margin: 0;
+    padding: 0;
+    border: 1px solid grey;
+    border-radius: 0.09in;
+    position: relative;
+    top: 20px;
+    left: 0;
+    transform: scale(1.125);
+    -webkit-print-color-adjust: exact;
+    -webkit-box-shadow: 6px 6px 20px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 6px 20px -6px rgba(0,0,0,0.75);
+    box-shadow: 6px 6px 20px -6px rgba(0,0,0,0.75);
+}
+
+.displayGeneral {
+    padding: 0;
+    margin-left: 0.433in;
+    text-align: center;
+    -webkit-print-color-adjust: exact;
+}
+
+#logoContainer {
+    margin-top: 0.32in;
+    height: 0.345in;
+}
+
+#logo {
+    width: 1.25in;
+    height: 0.3415in;
+}
+
+#schoolNameDisplay {
+    color: #074F9A;
+    font-family: nobel;
+    font-size: 11.75pt;
+    height: 0.35in;
+    line-height: 11.75pt;
+    font-weight: bold;
+}
+
+#schoolYearDisplay {
+    font-family: nobel;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #ED1C27;
+    line-height: 10pt;
+    margin-top: 0.025in;
+}
+
+#photoContainer {
+    
+    margin-top: 0.065in;
+}
+
+#photo {
+    width: 0.825in;
+    height: 0.825in;
+    background-color: beige;
+}
+
+.nameGradePosition {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0.025in;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#firstNameDisplay, #lastNameDisplay {
+    font-style: italic;
+    color: #cb21c7;
+    font-size: 10pt;
+}
+
+#gradeJobDisplayLabel, #gradeDisplay, #positionDisplay {
+    font-style: italic;
+    font-size: 9pt;
+}
+
+#idNumberDisplay {
+    margin-top: 0.05in;
+}
+
+#idNumberCornerDisplay {
+    padding: 0;
+    margin: 0;
+    width: 0.433in;
+    text-align: center;
+    position: absolute;
+    bottom: 0.05in;
+    left: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 7pt;
+    -webkit-print-color-adjust: exact;
+}
+
+#idNumberBarcodeDisplay {
+    font-family: 'Libre Barcode 39', cursive;
+    font-size: 20pt;
+    margin-top: 0.125in;
+}
+
+#backgroundImage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.myButton {
+	
+	background-color:#2dabf9;
+	
+	border-radius:3px;
+	border:1px solid #ccc;
+	display:inline-block;
+	cursor:pointer;
+	color:#fff;
+	font-size:18px;
+	padding:8px 25px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #263666;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
+	background:-moz-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-o-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:-ms-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+	background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
+	background-color:#0688fa;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+#disclaimer {
+    
+    text-align: center;
+    height: 20pt;
+    font-family: Calibri;
+    font-size: 10pt;
+    color: dimgray;
+}
+
+
+
+@media print {
+    
+    #left {
+        display: none;
+    }
+
+    #wrapper {
+        padding: 0;
+        margin: 0;
+        width: auto;
+        height: auto;
+    }
+
+    #right {
+        margin: 0;
+        border: 0;
+        border-radius: 0;
+        transform: scale(1);
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        float: none;
+    }
+
+    @page {
+        size:  auto; /* landscape */
+        /* you can also specify margins here: */
+        margin: 0;
+        margin-top: 0;
+    }
+}
+
